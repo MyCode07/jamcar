@@ -1,0 +1,132 @@
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: "Montserrat";
+    font-style: normal;
+    height: 100%;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+
+    &._noscroll {
+        overflow: hidden;
+    }
+
+    &:before {
+        position: fixed;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(50% 50% at 50% 50%, #1e1e1e 0%, #101010 100%);
+        z-index: -1;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background: #1e1e1e;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #1e1e1e;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 10px;
+    }
+}
+
+section {
+    min-height: 100vh;
+}
+
+._container {
+    max-width: 1440px;
+
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 1500px) {
+        padding: 0 30px;
+        max-width: none;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 0 15px;
+    }
+}
+
+._container-menu {
+    max-width: 1151px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+._container-komanda {
+    max-width: 1600px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+._container-portfollio {
+    max-width: 1920px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 150;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    &:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ffffff;
+        border-radius: 100%;
+        width: 82px;
+        height: 82px;
+    }
+
+    &._cursorhover {
+        &:after {
+            content: "";
+        }
+    }
+}
+
+.cursor2 {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.15s;
+    z-index: 150;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}

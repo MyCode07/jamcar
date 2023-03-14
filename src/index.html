@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jam car</title>
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- AnimeJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+
+    <!-- Greensock / TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+</head>
+
+
+
+<body>
+    <div class="cursor-elem">
+        <div class="cursor"></div>
+        <div class="cursor2"></div>
+    </div>
+
+    <div class="menu">
+        <div class="menu__container _container-menu">
+            <div class="menu__body">
+                <button class="menu__burger">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="menu__svg">
+                    <svg class="line" width="21" height="433" viewBox="0 0 21 433" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 433L20.9778 0.275523L0.97967 -0.000367884L11 433Z" fill="white" />
+                    </svg>
+                    <svg class="circle" width="841" height="841" viewBox="0 0 841 420" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="420.5" cy="-0.5" r="418" fill="url(#paint0_radial_543_5)" fill-opacity="0.06"
+                            stroke="url(#paint1_linear_543_5)" stroke-width="5" />
+                        <circle data-deg="78" cx="49" cy="191" r="7" fill="#464646" data-fill="#464646" />
+                        <circle data-deg="-78" cx="793" cy="191" r="7" fill="#464646" data-fill="#464646" />
+                        <circle data-deg="60" cx="114" cy="284" r="7" fill="#868686" data-fill="#868686" />
+                        <circle data-deg="-60" cx="726" cy="284" r="7" fill="#868686" data-fill="#868686" />
+                        <circle data-deg="40" cx="215" cy="364" r="7" fill="#CCCCCC" data-fill="#CCCCCC" />
+                        <circle data-deg="-40" cx="624" cy="364" r="7" fill="#CCCCCC" data-fill="#CCCCCC" />
+                        <circle data-deg="17" cx="342" cy="409" r="7" fill="#ffffff" data-fill="#ffffff" />
+                        <circle data-deg="-15" cx="504" cy="409" r="7" fill="#ffffff" data-fill="#ffffff" />
+                        <defs>
+                            <radialGradient id="paint0_radial_543_5" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(420.5 141.5) rotate(90) scale(278.5 457.886)">
+                                <stop stop-color="white" />
+                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="paint1_linear_543_5" x1="420.5" y1="148.5" x2="420.5" y2="420"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                </div>
+
+                <nav>
+                    <ul>
+                        <div class="menu-1">
+                            <li><a href="" class="current" data-deg="78">Главная</a></li>
+                            <li><a href="" data-deg="-78">Шумзащита</a></li>
+                        </div>
+                        <div class="menu-2">
+                            <li><a href="" data-deg="60">Детейлинг</a></li>
+                            <li><a href="" data-deg="-60">Защита</a></li>
+                        </div>
+                        <div class="menu-3">
+                            <li><a href="" data-deg="40">Полировка</a></li>
+                            <li><a href="" data-deg="-40">Оклейка</a></li>
+                        </div>
+                        <div class="menu-4">
+                            <li><a href="" data-deg="17">Реставрация</a></li>
+                            <li><a href="" data-deg="-15">Химчистка</a></li>
+                        </div>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="menu__bottom">
+        <div class="menu__bottom-container ">
+            <div class="menu__bottom-body">
+                <button class="menu__bottom-burger">
+                    <img src="img/svg/ar.svg" alt="">
+                </button>
+
+                <nav class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide _link"><a href="#uslugi">Услуги</a></li>
+                        <li class="swiper-slide _link"><a href="#akcii">Акции</a></li>
+                        <li class="swiper-slide _link"><a href="#komanda">Команда</a></li>
+                        <li class="swiper-slide _link"><a href="#advantages">Преимущества</a></li>
+                        <li class="swiper-slide _link"><a href="#portfollio">Портфолио</a></li>
+                        <li class="swiper-slide _link"><a href="#salon">Салон</a></li>
+                        <li class="swiper-slide _link"><a href="#any">Контакты</a></li>
+                    </ul>
+                    <div class="menu__track"></div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="home">
+            <div class="home__container _container">
+                <div class="home__body">
+                    <h1>Главная</h1>
+                    <div>
+                        <img src="img/home-Porsche-Taycan- 1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="uslugi" class="uslugi">
+            <div class="uslugi__container _container-uslugi">
+                <div class="uslugi__body">
+                    <div class="uslugi__flex">
+                        <div class="uslugi__flex-sidebar">
+                            <ol class="uslugi__flex-list">
+                                <li data-menu>
+                                    <img class="open" src="img/svg/ol.svg" alt="">
+                                    <img class="close" src="img/svg/close.svg" alt="">
+                                    Полировка
+                                    <ol data-submenu>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li data-menu>
+                                    <img class="open" src="img/svg/ol.svg" alt="">
+                                    <img class="close" src="img/svg/close.svg" alt="">
+                                    Оклейка
+                                    <ol data-submenu>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li data-menu>
+                                    <img class="open" src="img/svg/ol.svg" alt="">
+                                    <img class="close" src="img/svg/close.svg" alt="">
+                                    Ремонт
+                                    <ol data-submenu>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li data-menu>
+                                    <img class="open" src="img/svg/ol.svg" alt="">
+                                    <img class="close" src="img/svg/close.svg" alt="">
+                                    Шумоизоляция
+                                    <ol data-submenu>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li data-menu>
+                                    <img class="open" src="img/svg/ol.svg" alt="">
+                                    <img class="close" src="img/svg/close.svg" alt="">
+                                    Реставрация
+                                    <ol data-submenu>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                        <li>Ремонт
+                                            <span>
+                                                Ремонт двигателя
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="uslugi__flex-content">
+                            <div>
+                                <h1>Услуги</h1>
+                                <div>
+                                    <img src="img/home-Porsche-Taycan- 1.png" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="akcii" class="akcii">
+            <div class="akcii__container _container-portfollio">
+                <div class="akcii__body">
+                    <div class="akcii__flex">
+                        <div class="akcii__flex-left">
+                            <h2>Акции</h2>
+                            <div>
+                                <img src="img/akcii.png" alt="">
+                            </div>
+                        </div>
+                        <div class="akcii__flex-right">
+                            <div>
+                                <span>до 01.12.2022</span>
+                                <span>Полировка фар авто за 3200 руб.</span>
+                            </div>
+                            <div class="center">
+                                <label>Текущая</label>
+                                <p>Детейлинг авто за 1999₽</p>
+                            </div>
+                            <div>
+                                <span>с 01.01.2023</span>
+                                <span>Оклейка капота винилом в подарок</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="komanda" class="komanda">
+
+            <div class="komanda__container _container-komanda">
+                <div class="komanda__body">
+                    <h2>Команда</h2>
+                    <div class="komanda-swiper">
+                        <ol class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                            <li class="swiper-slide">
+                                <img id="aleks" src="img/komanda.png" alt="">
+                                <label for="aleks">Александр</label>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages" class="advantages">
+
+            <div class="advantages__container _container-komanda">
+                <div class="advantages__body">
+                    <h2>Преимущества</h2>
+                    <ol>
+
+                        <li>
+                            Playstation
+                            <img src="img/zona.png" alt="">
+                        </li>
+                        <li>
+                            Страховка авто
+                            <img src="img/zona.png" alt="">
+                        </li>
+                        <li>
+                            Наличие материалов
+                            <img src="img/zona.png" alt="">
+                        </li>
+                        <li>
+                            Парковка
+                            <img src="img/zona.png" alt="">
+                        </li>
+                        <li>
+                            Зона отдыха
+                            <img src="img/zona.png" alt="">
+                        </li>
+                        <li>
+                            Кофейня
+                            <img src="img/zona.png" alt="">
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="portfollio" class="portfollio">
+            <h2 class="portfollio__logo">Портфолио</h2>
+
+            <div class="portfollio__container _container-portfollio">
+                <div class="portfollio__body">
+                    <div id="portfollio__scroller" class="portfollio__scroller">
+                        <div id="draggable-target" class="portfollio__scroller-content">
+
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dedl.png" alt="">
+                                    <div class="content">
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/ded.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dd.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dedl.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dds.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/ded.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dda.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dedl.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="portfollio__card card-prx-1">
+                                <div>
+                                    <img src="img/dedl.png" alt="">
+                                    <div>
+                                        <h4>Детейлинг</h4>
+                                        <span>Химчистка салона</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="salon" class="salon">
+            <div class="salon__container _container-portfollio">
+                <div class="salon__body">
+                    <div class="salon__content">
+                        <div class="salon__content-left">
+                            <div class="salon__content-item">
+                                <span>Салон</span>
+                                <div class="salon__content-info salon-item">
+                                    <img src="img/bmw.png" alt="">
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna
+                                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                            nisi ut aliquip ex ea commodo consequat</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salon__content-right">
+                            <div class="salon__content-item salon__content-small salon-item">
+                                <span>Стенд</span>
+                                <div class="salon__content-info">
+                                    <img src="img/bmw.png" alt="">
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="salon__content-item salon__content-small salon-item">
+                                <span>Кальянная</span>
+                                <div class="salon__content-info">
+                                    <img src="img/bmw.png" alt="">
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="how">
+            <div class="how__container _container-portfollio">
+                <div class="how__body">
+                    <div class="how__content">
+                        <h2>Как доехать</h2>
+
+                        <a href="https://yandex.ru/maps/-/CCUG7IQ5-C">
+                            <svg viewBox="0 0 25 25">
+                                <path class="arrow"
+                                    d="M12.5,18.83a.5.5,0,0,1-.4-.2c-.79-1-4.73-6.27-5-6.9A.48.48,0,0,1,7,11.59,6.83,6.83,0,0,1,6.5,8.94a6.26,6.26,0,0,1,6-6.47,6.26,6.26,0,0,1,6,6.47,6.85,6.85,0,0,1-.55,2.7.5.5,0,0,1-.06.13l0,0c-.24.56-4.19,5.79-5,6.83A.5.5,0,0,1,12.5,18.83ZM8,11.31H8c.19.41,2.71,3.8,4.5,6.17,1.79-2.37,4.3-5.76,4.5-6.17h0a5.85,5.85,0,0,0,.49-2.36,5.26,5.26,0,0,0-5-5.47,5.26,5.26,0,0,0-5,5.47A5.85,5.85,0,0,0,8,11.3Z" />
+                                <path class="arrow"
+                                    d="M12.5,11A2.5,2.5,0,1,1,15,8.5,2.5,2.5,0,0,1,12.5,11Zm0-4A1.5,1.5,0,1,0,14,8.5,1.5,1.5,0,0,0,12.5,7Z" />
+                                <path class="cls-1"
+                                    d="M12.5,23C9.7,23,5,22.81,5,21.5S9.7,20,12.5,20s7.5.19,7.5,1.5S15.3,23,12.5,23Zm-6-1.5a27.56,27.56,0,0,0,6,.5,27.56,27.56,0,0,0,6-.5,27.56,27.56,0,0,0-6-.5A27.56,27.56,0,0,0,6.49,21.5Zm12.59.21h0Z" />
+                            </svg>
+                        </a>
+
+                        <img src="img/how.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="any" class="any">
+            <div class="any__container _container-portfollio">
+                <div class="any__body">
+                    <div class="any__content">
+                        <h2>Любые авто</h2>
+
+                        <div class="any__content-left">
+                            <img src="img/2020-Porsche-Taycan- 1.png" alt="">
+                        </div>
+                        <div class="any__content-slider any-swiper">
+                            <ol class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <img src="img/mercedes.png" alt="">
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="img/mercedes.png" alt="">
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="img/mercedes.png" alt="">
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="img/mercedes.png" alt="">
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="any__content-right">
+                            <img src="img/bmw.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src=" js/app.min.js"></script>
+</body>
+
+</html>
