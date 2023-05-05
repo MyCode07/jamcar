@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(Draggable);
 
 function init() {
-    let card = document.querySelectorAll('.portfollio__card')
-    let image = document.querySelectorAll('.portfollio__card img')
+    let card = document.querySelectorAll('.portfolio__card')
+    let image = document.querySelectorAll('.portfolio__card img')
     let widthContainer = 0
 
     image.forEach(function (item, index) {

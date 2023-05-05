@@ -1,7 +1,7 @@
 import Swiper from "swiper";
 
 if (window.innerWidth <= 1600) {
-    new Swiper('.komanda-swiper', {
+    new Swiper('.team-swiper', {
         speed: 500,
         spaceBetween: 0,
         watchSlidesProgress: true,

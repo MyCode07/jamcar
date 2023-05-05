@@ -1,0 +1,106 @@
+.anycar {
+    // .anycar__container
+
+    &__container {
+    }
+
+    // .anycar__body
+
+    &__body {
+        h2 {
+            padding-top: 90px;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            font-style: normal;
+            font-weight: 600;
+            @include adaptive-value("font-size", 164, 37, 1);
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            pointer-events: none;
+        }
+    }
+
+    // .anycar__content
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        min-height: 100vh;
+        // .anycar__content-left
+
+        &-left {
+            position: absolute;
+            right: 61%;
+            top: calc(50% + 78px);
+            transform: translate(0, -50%);
+
+            @media (max-width: 992px) {
+                top: calc(100% - 162px);
+                transform: translate(0, -100%);
+            }
+
+            @media (max-width: 600px) {
+                top: calc(100% - 116px);
+            }
+
+            img {
+                @include adaptive-value("width", 1223, 272, 1);
+            }
+        }
+
+        // .anycar__content-slider
+
+        &-slider {
+            position: absolute;
+            bottom: 0;
+            height: 65%;
+            overflow: hidden;
+
+            ol {
+                li {
+                }
+            }
+
+            .swiper-slide {
+                opacity: 0.5;
+                overflow: hidden;
+                transition: 0.7s;
+                transform: scale(0.8);
+                filter: blur(7px);
+            }
+
+            .swiper-slide-active {
+                opacity: 1;
+                z-index: 1;
+                filter: blur(0px);
+                transform: scale(1);
+            }
+        }
+
+        // .anycar__content-right
+
+        &-right {
+            position: absolute;
+            left: 53%;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            @media (max-width: 992px) {
+                top: calc(100% - 171px);
+                transform: translate(0, -100%);
+            }
+
+            @media (max-width: 600px) {
+                top: calc(100% - 121px);
+            }
+
+            img {
+                @include adaptive-value("width", 1421, 316, 1);
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
-const services = document.querySelector('.uslugi__flex-content');
-const service = document.querySelector('.uslugi');
+const services = document.querySelector('.services__flex-content');
+const service = document.querySelector('.services');
 const body = document.body;
 
 document.addEventListener('click', function (e) {

@@ -1,0 +1,97 @@
+
+.home {
+    @media (max-width: 992px) {
+        overflow-x: hidden;
+    }
+
+    transition: all 0.7s ease 0s;
+
+    padding-top: 370px;
+
+    &._scroll {
+        padding-top: 88px;
+    }
+
+    @media (max-width: 992px) {
+        padding-top: 0;
+    }
+
+    position: relative;
+    top: -13px;
+
+    // .home__container
+
+    &__container {
+    }
+
+    // .home__body
+
+    &__body {
+        position: relative;
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+            font-style: normal;
+            font-weight: 600;
+            @include adaptive-value("font-size", 233.809, 68, 1);
+            line-height: 1.18;
+
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+
+            @media (max-width: 1440px) {
+                font-size: 150px;
+            }
+
+            @media (max-width: 992px) {
+                text-align: center;
+                @include adaptive-value("font-size", 132, 90, 1);
+                line-height: 161px;
+                padding-top: 88px;
+            }
+
+            @media (max-width: 425px) {
+                font-size: 68px;
+                line-height: 83px;
+            }
+        }
+        div {
+            position: relative;
+            @include adaptive-value("width", 1120, 751, 1);
+            @include adaptive-value("height", 413, 312, 1);
+            @include adaptive-value("top", -117, -38, 1);
+            margin: 0 auto;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+
+                @media (max-width: 425px) {
+                    left: 42%;
+                }
+            }
+
+            @media (max-width: 992px) {
+                @include adaptive-value("width", 878, 551, 1);
+                @include adaptive-value("height", 362, 312, 1);
+            }
+
+            @media (max-width: 768px) {
+                width: 751px;
+                height: 312px;
+            }
+        }
+    }
+}

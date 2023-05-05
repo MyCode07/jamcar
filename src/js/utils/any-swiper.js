@@ -1,6 +1,6 @@
 import { Swiper, Autoplay, Mousewheel } from 'swiper'
 
-new Swiper('.any-swiper', {
+new Swiper('.anycar-swiper', {
     modules: [
         Autoplay,
         Mousewheel,
