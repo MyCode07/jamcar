@@ -1,4 +1,6 @@
 .sale {
+    overflow: hidden;
+
     padding-bottom: 100px;
     @media (max-width: 425px) {
         padding-bottom: 0;

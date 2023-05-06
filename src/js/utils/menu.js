@@ -8,7 +8,9 @@ const menuArrow = document.querySelector('.line');
 
 if (menuList.length) {
     let locked = false;
-    const currentPageLink = document.querySelector('a.current');
+
+    const pageId = document.querySelector('main').getAttribute('id');
+    const currentPageLink = document.querySelector(`a[data-id="${pageId}"]`);
     const currentDeg = currentPageLink.dataset.deg;
     const currentCircle = document.querySelector(`svg circle[data-deg="${currentDeg}"]`);
 
@@ -24,11 +26,9 @@ if (menuList.length) {
         let deg = menItem.dataset.deg;
         const circle = document.querySelector(`svg circle[data-deg="${deg}"]`);
 
-
         menItem.addEventListener('click', function (e) {
             e.preventDefault();
         })
-
 
         menItem.addEventListener('mouseenter', function (e) {
 

@@ -1,7 +1,8 @@
 import Swiper from "swiper";
 
-if (window.innerWidth <= 1600) {
-    new Swiper('.team-swiper', {
+const teamSlide = document.querySelector('.team .swiper');
+if (teamSlide) {
+    new Swiper(teamSlide, {
         speed: 500,
         spaceBetween: 0,
         watchSlidesProgress: true,
@@ -32,7 +33,14 @@ if (window.innerWidth <= 1600) {
             },
             1200: {
                 slidesPerView: 7,
+                simulateTouch: true,
+                allowTouchMove: true
             },
+            1600: {
+                slidesPerView: 7,
+                simulateTouch: false,
+                allowTouchMove: false
+            }
         },
     });
-}
+} 

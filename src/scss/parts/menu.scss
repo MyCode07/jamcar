@@ -154,6 +154,10 @@
                 transition: all 0.3s ease 0s;
                 display: flex;
 
+                @media (min-width: 993px) and (max-height: 768px) {
+                    margin-bottom: 6vh;
+                }
+
                 &:not(._open) {
                     align-items: center;
                     justify-content: space-between;
@@ -259,6 +263,10 @@
             top: -350px;
             transform: translate(-50%, 0);
             @include adaptive-value("width", 841, 500, 1);
+
+            @media (min-width: 993px) and (max-height: 768px) {
+                width: 90vh;
+            }
         }
 
         .line {

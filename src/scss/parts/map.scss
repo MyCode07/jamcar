@@ -29,7 +29,7 @@
             font-weight: 600;
             font-size: 66px;
             text-align: center;
-            line-height: 83px;
+            line-height: 1.2;
             color: #ffffff;
             pointer-events: none;
 
@@ -46,6 +46,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            pointer-events: none;
 
             @media (max-width: 992px) {
                 position: absolute;
@@ -53,29 +54,61 @@
             }
         }
 
-        svg {
+        a {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 150px;
-            fill: #fff;
 
-            .arrow {
-                animation: updown 2s linear infinite;
-                transform-origin: center;
+            animation: pulse 1.5s linear infinite;
+            transform-origin: center;
 
-                @keyframes updown {
-                    0% {
-                    }
-                    50% {
-                        transform: translate(0, 2px);
-                    }
-                    100% {
-                        transform: translate(0, 0);
+            border: 7px solid rgba($color: #fff, $alpha: 0.7);
+            width: 116px;
+            height: 116px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            &:before {
+                border-radius: 50%;
+                content: "";
+                display: block;
+                width: 45%;
+                height: 45%;
+                border: inherit;
+                border-color: #fff;
+                transition: all 0.3s ease 0s;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    &:before {
+                        transform: scale(1.2);
                     }
                 }
             }
+
+            transform-origin: left top;
+            @keyframes pulse {
+                0% {
+                    transform: scale(1) translate(-50%, -50%);
+                }
+                50% {
+                    transform: scale(1.1) translate(-50%, -50%);
+                }
+                100% {
+                    transform: scale(1) translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+    &.map-page {
+        h2 {
+            @include adaptive-value("font-size", 214, 68, 1);
         }
     }
 }
