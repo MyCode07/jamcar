@@ -33,6 +33,18 @@
     // .home__container
 
     &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+
+        @media (max-width: 1500px) {
+            padding: 0 30px;
+            max-width: none;
+        }
+
+        @media (max-width: 1024px) {
+            padding: 0 15px;
+        }
     }
 
     // .home__body
@@ -110,6 +122,13 @@
     &.page-home {
         padding-top: 13vh;
 
+        .home__container {
+            @media (min-width: 1501px) {
+                max-width: none;
+                padding: 0 100px;
+            }
+        }
+
         @media (max-width: 992px) {
             padding-top: 0;
         }
@@ -139,7 +158,6 @@
         // .home__bottom-whatsapp
 
         &-whatsapp {
-           
         }
 
         // .home__bottom-youtube
