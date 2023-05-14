@@ -66,7 +66,6 @@
     // .polishing-lights__container
 
     &__container {
-       
     }
 
     // .polishing-lights__body
@@ -193,7 +192,6 @@
     // .polishing-bumper__container
 
     &__container {
-      
     }
 
     // .polishing-bumper__body
@@ -267,6 +265,7 @@
             width: 100%;
             display: block;
             border-radius: 18px;
+            object-fit: cover;
         }
     }
 
@@ -330,7 +329,6 @@
     // .polishing-scratches__container
 
     &__container {
-        
     }
 
     // .polishing-scratches__body

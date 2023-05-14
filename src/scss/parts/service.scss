@@ -655,6 +655,10 @@
         .service-flex__images {
             position: relative;
 
+            @media (min-width: 1025px) {
+                aspect-ratio: 1/1;
+            }
+
             @media (max-width: 1024px) {
                 width: 100%;
                 display: flex;
@@ -673,6 +677,10 @@
 
                 @media (max-width: 1024px) {
                     position: static;
+                }
+
+                @media (max-width: 600px) {
+                    aspect-ratio: 1/1.3;
                 }
             }
 
