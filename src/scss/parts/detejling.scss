@@ -1,13 +1,13 @@
-.deejling {
+.detejling {
     overflow: hidden;
     margin-bottom: 100px;
 
-    // .deejling__container
+    // .detejling__container
 
     &__container {
     }
 
-    // .deejling__body
+    // .detejling__body
 
     &__body {
     }
@@ -27,7 +27,7 @@
         }
     }
 
-    // .deejling__images
+    // .detejling__images
 
     &__images {
         display: flex;
@@ -66,7 +66,7 @@
         }
     }
 
-    // .deejling__whatsapp
+    // .detejling__whatsapp
 
     &__whatsapp {
         display: block;
@@ -87,21 +87,34 @@
     }
 }
 
-.deejling-services {
+.detejling-services {
     position: relative;
     margin-bottom: 100px;
 
-    // .deejling-services__container
+    // .detejling-services__container
 
     &__container {
     }
 
-    // .deejling-services__body
+    // .detejling-services__body
 
     &__body {
+        position: relative;
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: -1;
+            display: block;
+        }
     }
 
-    // .deejling-services__title
+    // .detejling-services__title
 
     &__title {
         font-style: normal;
@@ -110,6 +123,7 @@
         text-align: center;
         letter-spacing: 0.05em;
         color: #3e3e3e;
+        z-index: 1;
 
         @include adaptive-value("font-size", 24, 14, 1);
         @include adaptive-value("padding-top", 20, 11, 1);
@@ -169,6 +183,7 @@
         height: 51vh;
         width: 75vw;
         margin-inline: auto;
+        z-index: 2;
 
         @media (max-width: 992px) {
             width: 95vw;
@@ -325,13 +340,13 @@
                 @include adaptive-value("padding-inline", 27, 14, 1);
                 @include adaptive-value("border-radius", 18, 10, 1);
 
-                background: rgba(255, 255, 255, 0.1);
+                background: #2B2B2B;
                 box-shadow: 0px 39px 40px -20px rgba(0, 0, 0, 0.15);
                 transition: all 0.3s ease 0s;
 
                 @media (any-hover: hover) {
                     &:hover {
-                        background: rgba(255, 255, 255, 0.3);
+                        background: #5E5E5E;
                         box-shadow: 0px 39px 40px -20px rgba(0, 0, 0, 0.15);
 
                         label {
@@ -379,12 +394,12 @@
         }
     }
 
-    // .deejling-services__carcass
+    // .detejling-services__carcass
 
     &__carcass {
     }
 
-    // .deejling-services__salon
+    // .detejling-services__salon
 
     &__salon {
     }

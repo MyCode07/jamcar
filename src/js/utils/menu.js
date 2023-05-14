@@ -26,9 +26,6 @@ if (menuList.length) {
         let deg = menItem.dataset.deg;
         const circle = document.querySelector(`svg circle[data-deg="${deg}"]`);
 
-        menItem.addEventListener('click', function (e) {
-            e.preventDefault();
-        })
 
         menItem.addEventListener('mouseenter', function (e) {
 

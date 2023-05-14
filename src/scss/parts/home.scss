@@ -112,7 +112,7 @@
     // .home__bottom
 
     .page-title {
-        @include adaptive-value("font-size", 117, 48, 1);
+        @include adaptive-value("font-size", 117, 40, 1);
 
         @media (max-width: 992px) {
             padding-top: 0;
@@ -185,5 +185,11 @@
 
         &-preview {
         }
+    }
+}
+
+#restovraciya {
+    .page-title {
+        @include adaptive-value("font-size", 115, 40, 1);
     }
 }
