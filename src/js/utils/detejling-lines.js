@@ -34,10 +34,11 @@ if (serviceSection.length) {
             if (listItems.length) {
                 listItems.forEach(li => {
                     const positions = getItemLinePosition(listTitle, li, canvas)
-
+                    ctx.beginPath();
                     ctx.moveTo(startPosition.left, positions.start);
                     ctx.lineWidth = 1;
                     ctx.lineTo(positions.x, positions.y);
+                    ctx.closePath();
 
                     if (li.hasAttribute('data-null')) {
                         ctx.beginPath();
