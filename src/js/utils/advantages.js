@@ -21,7 +21,6 @@ if (items.length) {
                 autoAlpha: 0,
             })
             e.target.style.zIndex = '0';
-
         })
 
         el.addEventListener('mousemove', (e) => {
@@ -32,9 +31,7 @@ if (items.length) {
 
 
 const salonItems = document.querySelectorAll('.salon-item');
-
 if (salonItems.length) {
-
     salonItems.forEach((el) => {
         const image = el.querySelector('img')
 
@@ -60,7 +57,6 @@ if (salonItems.length) {
         });
     })
 }
-
 
 
 const handleParallax = (e, elem, image) => {

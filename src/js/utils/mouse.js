@@ -19,23 +19,20 @@ function controlMouse() {
         mouseElem.style.display = 'block';
     }
 }
-controlMouse();
 
-window.addEventListener("resize", function (e) {
-    controlMouse();
-});
+controlMouse();
+window.addEventListener("resize", controlMouse);
 
 
 let menuBottomLinks = document.querySelectorAll('._link');
-for (let i = 0; i < menuBottomLinks.length; i++) {
-    const link = menuBottomLinks[i];
+if (menuBottomLinks.length) {
+    menuBottomLinks.forEach(link => {
+        link.addEventListener('mouseover', function () {
+            mouse.classList.add('_cursorhover');
+        });
 
-    link.addEventListener('mouseover', function () {
-        mouse.classList.add('_cursorhover');
-    });
-
-    link.addEventListener('mouseleave', function () {
-        mouse.classList.remove('_cursorhover');
-    });
-
+        link.addEventListener('mouseleave', function () {
+            mouse.classList.remove('_cursorhover');
+        });
+    })
 }

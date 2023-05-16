@@ -1,7 +1,6 @@
 import { Swiper, Scrollbar } from 'swiper';
 
 
-
 // spidometr
 const menuList = document.querySelectorAll('.menu nav a');
 const menuArrow = document.querySelector('.line');
@@ -66,15 +65,24 @@ if (menuList.length) {
 }
 
 const menuBottom = document.querySelector('.menu__bottom');
-const bottomBurgerBtn = document.querySelector('.menu__bottom-burger');
+const bottomBurger = document.querySelector('.menu__bottom-burger');
 const bottomMenuNav = document.querySelector('.menu__bottom-body nav');
 
 if (menuBottom) {
+    bottomBurger.addEventListener('click', () => {
+        bottomBurger.classList.toggle('_click');
+        bottomMenuNav.classList.toggle('_open');
+    })
+}
 
-    bottomBurgerBtn.addEventListener('click', () => {
-        menuBottom.classList.toggle('_menu-bottom-open');
-        bottomBurgerBtn.classList.toggle('_click');
-        bottomMenuNav.classList.toggle('_menu__bottom-body-open');
+const topBurger = document.querySelector('.menu__burger');
+const menu = document.querySelector('.scroll-menu');
+
+if (topBurger) {
+    topBurger.addEventListener('click', () => {
+        topBurger.classList.toggle('_click');
+        menu.classList.toggle('_open');
+        body.classList.toggle('_noscroll');
     })
 }
 

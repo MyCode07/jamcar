@@ -42,6 +42,5 @@ document.addEventListener('click', function (e) {
 
             body.classList.remove('_noscroll')
         }
-
     }
 })

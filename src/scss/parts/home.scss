@@ -188,7 +188,8 @@
     }
 }
 
-#restovraciya {
+#restovraciya,
+#zashita {
     .page-title {
         @include adaptive-value("font-size", 115, 40, 1);
     }
