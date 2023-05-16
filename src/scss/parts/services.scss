@@ -372,25 +372,28 @@
             }
 
             div {
-                h1 {
+                h2 {
                     text-align: left;
                     font-style: normal;
                     font-weight: 600;
-                    @include adaptive-value("font-size", 214, 132, 1);
                     line-height: 155px;
                     letter-spacing: 0.05em;
                     color: #ffffff;
+
+                    @media (min-width: 1441px) {
+                        @include adaptive-value("font-size", 214, 132, 1);
+                    }
 
                     @media (max-width: 1440px) {
                         font-size: 150px;
                     }
 
-                    @media (max-width: 992px) {
+                    @media (max-width: 992px) and (min-width: 769px) {
                         text-align: center;
                         @include adaptive-value("font-size", 150, 132, 1);
                     }
 
-                    @media (max-width: 720px) {
+                    @media (max-width: 768px) {
                         font-size: 68px;
                     }
                 }
