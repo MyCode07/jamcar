@@ -175,7 +175,7 @@
                     position: absolute;
                     z-index: -1;
 
-                    @media (min-width: 992px) {
+                    @media (min-width: 993px) {
                         @include adaptive-value("translate", 180, -60, 1);
                         @include adaptive-value("width", 1080, 260, 1);
                         left: 100%;

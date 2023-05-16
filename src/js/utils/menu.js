@@ -82,7 +82,7 @@ if (topBurger) {
     topBurger.addEventListener('click', () => {
         topBurger.classList.toggle('_click');
         menu.classList.toggle('_open');
-        body.classList.toggle('_noscroll');
+        document.body.classList.toggle('_noscroll');
     })
 }
 
