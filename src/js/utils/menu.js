@@ -1,6 +1,5 @@
 import { Swiper, Scrollbar } from 'swiper';
 
-
 // spidometr
 const menuList = document.querySelectorAll('.menu nav a');
 const menuArrow = document.querySelector('.line');
@@ -86,11 +85,11 @@ if (topBurger) {
     })
 }
 
-
-if (window.innerWidth <= 992) {
+const bottomMenu = document.querySelector('.menu__bottom .swiper');
+if (bottomMenu && window.innerWidth <= 992) {
     new Swiper(".menu__bottom .swiper", {
-        slidesPerView: "auto",
         spaceBetween: 14,
+        
         modules: [
             Scrollbar
         ],
@@ -98,5 +97,16 @@ if (window.innerWidth <= 992) {
             el: '.menu__track',
             draggable: true
         },
+        breakpoints: {
+            300: {
+                slidesPerView: 2.5
+            },
+            641: {
+                slidesPerView: 3.5
+            },
+            769: {
+                slidesPerView: 4.5
+            }
+        }
     });
 }

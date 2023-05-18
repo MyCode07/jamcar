@@ -12,7 +12,7 @@ if (advantagesItems.length) {
     advantagesItems.forEach((item) => {
         const image = item.querySelector('img')
 
-        if (!isMobile.any) {
+        if (!isMobile.any()) {
 
             item.addEventListener('mouseenter', (e) => {
                 gsap.to(image, { autoAlpha: 1 })

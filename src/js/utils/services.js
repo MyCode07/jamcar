@@ -1,46 +1,49 @@
-const services = document.querySelector('.services__flex-content');
-const service = document.querySelector('.services');
+const servicesSection = document.querySelector('.services');
+const servicesFlexBody = document.querySelector('.services__flex-content-body');
+const servicesList = document.querySelectorAll('[data-menu]');
+const sebmenuContainer = document.querySelector('.services__submenus');
 const body = document.body;
 
-document.addEventListener('click', function (e) {
-    let targetEl = e.target;
+if (servicesList.length) {
+    servicesList.forEach(service => {
+        const menuName = service.dataset.menu;
+        const submenu = document.querySelector(`[data-submenu="${menuName}"]`);
 
-    if (targetEl.hasAttribute('data-menu')) {
-        const submenu = targetEl.querySelector(`[data-submenu]`);
+        service.addEventListener('click', function () {
 
-        if (!targetEl.hasAttribute('locked')) {
-            const openSubmenu = document.querySelector('[data-menu][locked]');
+            if (!service.hasAttribute('locked')) {
+                const openSubmenu = document.querySelector('[data-menu][locked]');
 
-            if (openSubmenu) {
-                openSubmenu.querySelector('[data-submenu]').classList.remove('_open')
-                openSubmenu.removeAttribute('locked');
+                if (openSubmenu) {
+                    const openSubmenuName = openSubmenu.dataset.menu;
+                    document.querySelector(`[data-submenu="${openSubmenuName}"]`).classList.remove('_open')
+                    openSubmenu.removeAttribute('locked');
 
-                services.classList.remove('_blur')
+                    servicesFlexBody.classList.remove('_blur')
+                    body.classList.remove('_noscroll')
+                    sebmenuContainer.classList.remove('_active')
+                    servicesSection.classList.remove('_active')
+                }
 
-                service.classList.remove('_blur')
+                submenu.classList.add('_open')
+                service.setAttribute('locked', 'true')
+                servicesFlexBody.classList.add('_blur')
+                sebmenuContainer.classList.add('_active')
+                servicesSection.classList.add('_active')
 
+
+                if (window.innerWidth <= 992) {
+                    body.classList.add('_noscroll')
+                }
+            }
+            else {
+                submenu.classList.remove('_open')
+                service.removeAttribute('locked')
+                servicesFlexBody.classList.remove('_blur')
                 body.classList.remove('_noscroll')
+                sebmenuContainer.classList.remove('_active')
+                servicesSection.classList.remove('_active')
             }
-
-            submenu.classList.add('_open')
-            targetEl.setAttribute('locked', 'true')
-            services.classList.add('_blur')
-
-            service.classList.add('_blur')
-
-            if (window.innerWidth <= 992) {
-                body.classList.add('_noscroll')
-            }
-        }
-        else {
-            submenu.classList.remove('_open')
-            targetEl.removeAttribute('locked')
-
-            services.classList.remove('_blur')
-
-            service.classList.remove('_blur')
-
-            body.classList.remove('_noscroll')
-        }
-    }
-})
+        })
+    })
+}
