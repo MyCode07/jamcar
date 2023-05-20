@@ -1,46 +1,72 @@
-import Swiper from "swiper";
+import { isMobile } from './isMobile.js'
 
-const teamSlide = document.querySelector('.team .swiper');
-if (teamSlide) {
-    new Swiper(teamSlide, {
-        speed: 500,
-        spaceBetween: 0,
-        watchSlidesProgress: true,
-        initialSlide: 3,
-        centeredSlides: true,
+const furniture = document.querySelector('.team__slider');
+const furnitureItems = document.querySelector('.team__slider-wrapper');
+const furnitureColumn = document.querySelectorAll('.team__slider-slide');
 
-        breakpoints: {
-            300: {
-                slidesPerView: 1,
-            },
-            426: {
-                slidesPerView: 2,
-            },
-            500: {
-                slidesPerView: 2,
-            },
-            600: {
-                slidesPerView: 3,
-            },
-            769: {
-                slidesPerView: 3.5,
-            },
-            992: {
-                slidesPerView: 5,
-            },
-            1024: {
-                slidesPerView: 5,
-            },
-            1200: {
-                slidesPerView: 7,
-                simulateTouch: true,
-                allowTouchMove: true
-            },
-            1600: {
-                slidesPerView: 7,
-                simulateTouch: false,
-                allowTouchMove: false
-            }
-        },
+if (furniture) {
+
+
+    let speed = furniture.dataset.speed;
+    let positionX = 0;
+    let coordXprocent = 0;
+
+    function wheel() {
+        let furnitureItemsWidth = 0;
+        furnitureColumn.forEach(item => {
+            furnitureItemsWidth += item.offsetWidth;
+        });
+
+        const furnitureDifferent = furnitureItemsWidth - furniture.offsetWidth;
+        const distX = Math.floor(coordXprocent - positionX);
+
+
+        positionX = positionX + (distX * speed);
+        let position = furnitureDifferent / 200 * positionX;
+
+        let direction = -1
+        if (isMobile.any()) {
+            direction = 1
+        }
+        else {
+            direction = -1
+        }
+
+        furnitureItems.style.transform = `translate3d(${direction * position}px,0,0)`;
+
+        if (Math.abs(distX) > 0) {
+            requestAnimationFrame(wheel);
+        }
+        else {
+            furniture.classList.remove('_init');
+        }
+    }
+
+    function scrollSlider(pageX) {
+        const furnitureWidth = furniture.offsetWidth;
+        const coordX = pageX - furnitureWidth / 2;
+        coordXprocent = coordX / furnitureWidth * 200;
+
+        if (!furniture.classList.contains('_init')) {
+            requestAnimationFrame(wheel);
+            furniture.classList.add('_init');
+        }
+    }
+
+    furniture.addEventListener('mousemove', function (e) {
+        scrollSlider(e.pageX)
     });
-} 
+
+    furniture.addEventListener('touchmove', function (e) {
+        let pageX = e.changedTouches[0].clientX
+
+        if (pageX < 0) {
+            pageX = 0
+        }
+        else if (pageX > window.innerWidth) {
+            pageX = window.innerWidth
+
+        }
+        scrollSlider(pageX)
+    });
+}

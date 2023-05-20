@@ -297,6 +297,23 @@
             @media (max-width: 992px) {
                 justify-content: flex-start;
                 align-items: flex-start;
+
+                overflow-x: auto;
+                padding-bottom: 5px;
+
+                &::-webkit-scrollbar {
+                    background: #1e1e1e;
+                    height: 3px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #1e1e1e;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #fff;
+                    height: 3px;
+                }
             }
 
             @media (max-width: 600px) {
@@ -323,6 +340,10 @@
                 }
 
                 @media (min-width: 993px) and (max-width: 1200px) {
+                    max-width: 126px;
+                }
+
+                @media (max-width: 992px) {
                     max-width: 126px;
                 }
 
@@ -408,7 +429,6 @@
     }
 
     .menu__track {
-        display: none;
         background: rgba($color: #d9d9d9, $alpha: 0.3);
         border-radius: 5px;
         max-width: 397px;
@@ -417,8 +437,10 @@
         margin-inline: auto;
         margin-top: 5px;
 
+        display: none;
+
         @media (max-width: 992px) {
-            display: block;
+            // display: block;
         }
 
         button,
