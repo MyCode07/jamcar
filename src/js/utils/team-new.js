@@ -1,93 +1,59 @@
-let isDown = false;
-let startX;
-let scrollLeft;
-let translate = 0;
-let translateEnd = 0;
+import Swiper from "swiper";
 
-const slider = document.querySelector('.team__slider-wrapper');
-if (slider) {
+let swiper = null;
+teamSlider()
+window.addEventListener('resize', teamSlider);
 
-    const sliderSlides = [...document.querySelectorAll('.team__slider-slide')];
-    const slidesWidth = sliderSlides.reduce((index, accum) => {
-        return sliderSlides.length * accum.getBoundingClientRect().width
-    })
+function teamSlider() {
+    const slider = document.querySelector('.team__slider');
+    const sliderWrapper = document.querySelector('.team__slider-wrapper');
+    const slides = document.querySelectorAll('.team__slider-slide');
 
-    const end = () => {
-        isDown = false;
-        slider.classList.remove('active');
-    }
-
-    const start = (e) => {
-        isDown = true;
-        slider.classList.add('active');
-        startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    }
-
-    const move = (e) => {
-        if (!isDown) return;
-
-        e.preventDefault();
-        const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-        const dist = (x - startX);
-        const width = (slidesWidth - window.innerWidth) / 2;
-
-        translate = -1 * (scrollLeft - dist) + translateEnd;
-
-        if (Math.abs(translate) > width) {
-            if (translate < 0) {
-                translate = -width
-            }
-            else if (translate > 0) {
-                translate = width
-            }
+    if (slider) {
+        if (window.innerWidth <= 1610) {
+            createSlider()
         }
-        slider.style.transform = `translate3d(${translate}px,0,0)`;
+        else {
+            destroySldier()
+        }
     }
 
-    (() => {
-        slider.addEventListener('mousedown', function (e) {
-            if (window.innerWidth <= 1610) {
-                start(e);
-                translateEnd = translate;
-            }
+    function createSlider() {
 
-        });
-        slider.addEventListener('touchstart', function (e) {
-            if (window.innerWidth <= 1610) {
-                start(e);
-            }
-        });
+        if (!slider.classList.contains('swiper')) {
+            slider.classList.add('swiper');
+        }
 
-        slider.addEventListener('mousemove', function (e) {
-            if (window.innerWidth <= 1610) {
-                move(e);
-            }
-        });
+        if (!sliderWrapper.classList.contains('swiper-wrapper')) {
+            sliderWrapper.classList.add('swiper-wrapper');
+        }
 
-        slider.addEventListener('touchmove', function (e) {
-            if (window.innerWidth <= 1610) {
-                move(e);
+        slides.forEach(slide => {
+            if (!slide.classList.contains('swiper-slide')) {
+                slide.classList.add('swiper-slide');
             }
-        });
+        })
 
-        slider.addEventListener('mouseleave', function (e) {
-            if (window.innerWidth <= 1610) {
-                end(e);
-            }
-        });
+        if (swiper == null) {
+            swiper = new Swiper(slider, {
+                loop: true,
+                slidesPerView: 'auto',
+                centeredSlides: true
+            })
+        }
+    }
 
-        slider.addEventListener('mouseup', function (e) {
-            if (window.innerWidth <= 1610) {
-                end(e);
-            }
-        });
+    function destroySldier() {
+        swiper = null
 
-        slider.addEventListener('touchend', function (e) {
-            if (window.innerWidth <= 1610) {
-                end(e);
-                translateEnd = translate;
+        slider.classList.remove('swiper');
+        sliderWrapper.classList.remove('swiper-wrapper');
+        slides.forEach(slide => {
+            slide.classList.remove('swiper-slide');
+
+            if (slide.classList.contains('swiper-slide-duplicate')) {
+                slide.remove();
             }
-        });
-    })();
+        })
+    }
 }

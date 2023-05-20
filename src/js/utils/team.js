@@ -24,6 +24,9 @@ if (furniture) {
         positionX = positionX + (distX * speed);
         let position = furnitureDifferent / 200 * positionX;
 
+        console.log(position);
+
+
         let direction = -1
         if (isMobile.any()) {
             direction = 1
@@ -32,7 +35,8 @@ if (furniture) {
             direction = -1
         }
 
-        furnitureItems.style.transform = `translate3d(${direction * position}px,0,0)`;
+        position = direction * position;
+        furnitureItems.style.transform = `translate3d(${position}px,0,0)`;
 
         if (Math.abs(distX) > 0) {
             requestAnimationFrame(wheel);
