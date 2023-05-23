@@ -1,0 +1,30 @@
+.to-top {
+    position: fixed;
+    @include adaptive-value("right", 50, 15, 1);
+    @include adaptive-value("bottom", 50, 25, 1);
+    @include adaptive-value("width", 50, 40, 1);
+    @include adaptive-value("height", 50, 40, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 20;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+
+    &._active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    img {
+        display: block;
+        width: 35%;
+        transform: rotate(-45deg);
+        pointer-events: none;
+    }
+}

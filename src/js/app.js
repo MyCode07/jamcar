@@ -1,4 +1,4 @@
-import './utils/smoothScroll.js'
+import './utils/smoothScroll.js' 
 import './utils/menu.js'
 import './utils/scroll.js'
 
@@ -15,3 +15,5 @@ import './utils/changeImagePosition.js'
 import './utils/service-more.js'
 import './utils/home-services-lines.js'
 import './utils/fixed-numbers.js'
+import './utils/to-top.js'
+ 
